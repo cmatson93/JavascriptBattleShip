@@ -78,5 +78,10 @@ $("td").click(function() {
             console.log(totalMisses);
             break;
     }
-
+    if (totalHits === winHits) {
+        console.log("YOU WIN");
+    }
+    if (totalMisses === loseMisses) {
+        console.log("You loose...");
+    }
 })
