@@ -1,6 +1,7 @@
 table {
-    margin: 100px;
+    margin: 80px;
     border-collapse: collapse;
+    float: left;
 }
 
 table,
@@ -22,4 +23,9 @@ td {
 
 .miss {
     background-color: blue;
+}
+
+.score-card {
+    float: right;
+    margin: 110px 225px 0 0;
 }

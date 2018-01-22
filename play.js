@@ -7,8 +7,7 @@ var ship5 = 5;
 
 var winHits = 21;
 var totalHits = 0;
-var loseMisses = 12;
-var totalMisses = 0;
+var missesLeft = 12;
 
 var gameBoard = [
     [0, 2, 2, 0, 0, 5, 0, 0, 0, 0],
@@ -74,14 +73,16 @@ $("td").click(function() {
         case "0":
             console.log("MISS");
             $(this).addClass("miss");
-            totalMisses += 1;
-            console.log(totalMisses);
+            missesLeft -= 1;
+            console.log(missesLeft);
+            $("#hits-left").text(missesLeft);
             break;
     }
     if (totalHits === winHits) {
         console.log("YOU WIN");
     }
-    if (totalMisses === loseMisses) {
+    if (missesLeft === 0) {
         console.log("You loose...");
+        $("#hits-left").text("Sorry You Loose...");
     }
 })
