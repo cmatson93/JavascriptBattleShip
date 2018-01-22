@@ -5,6 +5,11 @@ var ship3 = 4;
 var ship4 = 4;
 var ship5 = 5;
 
+var winHits = 21;
+var totalHits = 0;
+var loseMisses = 12;
+var totalMisses = 0;
+
 var gameBoard = [
     [0, 2, 2, 0, 0, 5, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 5, 0, 0, 4, 0],
@@ -45,24 +50,33 @@ $("td").click(function() {
         case "2":
             console.log("HIT A 2");
             $(this).addClass("hit");
+            totalHits += 1;
+            console.log(totalHits);
             break;
         case "3":
             console.log("HIT A 3");
             $(this).addClass("hit");
+            totalHits += 1;
+            console.log(totalHits);
             break;
         case "4":
             console.log("HIT A 4");
             $(this).addClass("hit");
+            totalHits += 1;
+            console.log(totalHits);
             break;
         case "5":
             console.log("HIT A 5");
             $(this).addClass("hit");
+            totalHits += 1;
+            console.log(totalHits);
+            break;
+        case "0":
+            console.log("MISS");
+            $(this).addClass("miss");
+            totalMisses += 1;
+            console.log(totalMisses);
             break;
     }
-    // if ($(this).attr("value") == 2) {
-    //     console.log($(this).attr("value"));
-    //     console.log("Hit");
-    //     $(this).addClass("hit");
-    // }
 
 })

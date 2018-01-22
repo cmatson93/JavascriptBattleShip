@@ -19,3 +19,7 @@ td {
 .hit {
     background-color: red;
 }
+
+.miss {
+    background-color: blue;
+}
