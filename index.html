@@ -9,28 +9,92 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+
+    <title>BattleShip</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <table id="tb">
+        <div class="jumbotron jumbotron-fluid ">
+            <div class="container justify-content-center">
+                <h1 class="display-4">BattleShip!</h1>
+                <p class="lead">Let's Battle.</p>
 
-        </table>
-        <div class="score-card">
-            <H2>Ships Sunk:</H2>
-            <p id="ships-sunk"></p>
-            <h2>Hits Left:</h2>
-            <p id="hits-left"></p>
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <a class="btn btn-primary" href="#" role="button">Rules</a>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+        <!-- <div class="row"> -->
+        <div class="gameboards row">
+            <div class="col">
+                <table id="tb1">
+
+                </table>
+            </div>
+            <div class="col">
+                <table id="tb2">
+
+                </table>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="row moves">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="player1-moves">
+                            <h6 class="ships" value="0">Destroyer</h6>
+                            <h6 class="ships" value="1">Submarine</h6>
+                            <h6 class="ships" value="2">Cruiser</h6>
+                            <h6 class="ships" value="3">Battleship</h6>
+                            <h6 class="ships" value="4">Carrier</h6>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary dir-btn" value=false>Verticle</button>
+                        <button type="button" class="btn btn-primary dir-btn" value=true>Horizontal</button>
+                        <button type="button" class="btn btn-primary submit-btn" value=true>Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="player2-moves">
+                    <h6 class="ships" value="0">Destroyer</h6>
+                    <h6 class="ships" value="1">Submarine</h6>
+                    <h6 class="ships" value="2">Cruiser</h6>
+                    <h6 class="ships" value="3">Battleship</h6>
+                    <h6 class="ships" value="4">Carrier</h6>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="play.js"></script>
+<script type="text/javascript" src="js/ship-placement.js"></script>
 
 </html>

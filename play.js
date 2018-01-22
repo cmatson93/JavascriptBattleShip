@@ -1,9 +1,15 @@
 //Carrier (occupies 5 spaces), Battleship (4), Cruiser (3), Submarine (3), and Destroyer (2).
-var destroyer = 2;
-var submarine = 3;
-var cruiser = 1;
-var battleship = 4;
-var carrier = 5;
+var destroyer = 0;
+var submarine = 1;
+var cruiser = 2;
+var battleship = 3;
+var carrier = 4;
+
+var destroyerLength = 2;
+var submarineLength = 3;
+var cruiserLength = 3;
+var battleshipLength = 4;
+var carrierLength = 5;
 
 var winHits = 21;
 var totalHits = 0;
@@ -11,18 +17,17 @@ var missesLeft = 12;
 
 gameOver = false;
 
-var gameBoard = [
-    [0, 2, 2, 0, 0, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 5, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 5, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 5, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 3, 3, 3, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 4, 4, 4, 4]
-]
+
+// var gameBoard = [
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// [(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)],
+// ]]
 
 //Ship Life: 
 var destroyerHits = 0;
@@ -33,18 +38,37 @@ var carrierHits = 0;
 
 var shipsSunk = [];
 
-//Make Table 
-var table = $('#tb');
-var row, cell;
 
-for (var i = 0; i < gameBoard.length; i++) {
+
+//Make Table 
+var table1 = $('#tb1');
+var row, cell;
+var gameBoard = 8;
+console.log(gameBoard)
+
+for (var i = 0; i < gameBoard; i++) {
     row = $('<tr />');
-    table.append(row);
-    for (var j = 0; j < gameBoard[i].length; j++) {
-        cell = $('<td value=' + gameBoard[i][j] + '>' + gameBoard[i][j] + '</td>');
+    table1.append(row);
+    for (var j = 0; j < gameBoard; j++) {
+        var cordinate = "(" + j + "," + i + ")";
+        cell = $('<td value=' + cordinate + '>' + cordinate + '</td>');
         row.append(cell);
     }
 }
+
+//Make Table 2
+var table2 = $('#tb2');
+
+for (var i = 0; i < gameBoard; i++) {
+    row = $('<tr />');
+    table2.append(row);
+    for (var j = 0; j < gameBoard; j++) {
+        var cordinate = "(" + j + "," + i + ")";
+        cell = $('<td value=' + cordinate + '>' + cordinate + '</td>');
+        row.append(cell);
+    }
+}
+
 
 $("td").click(function() {
     console.log("clicked")

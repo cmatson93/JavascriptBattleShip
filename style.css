@@ -1,7 +1,11 @@
-table {
-    margin: 80px;
+#tb1 {
     border-collapse: collapse;
-    float: left;
+    /* border: 2px solid red; */
+}
+
+#tb2 {
+    border-collapse: collapse;
+    /* border: 2px solid blue; */
 }
 
 table,
@@ -25,7 +29,23 @@ td {
     background-color: blue;
 }
 
-.score-card {
-    float: right;
-    margin: 110px 225px 0 0;
+.moves {
+    margin: 20px;
+}
+
+.ships h6 {
+    /* background-color: grey; */
+    padding: 3px;
+}
+
+.ships:hover {
+    background-color: yellow;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+table {
+    margin: 10px;
 }
