@@ -44,7 +44,6 @@ var shipsSunk = [];
 var table1 = $('#tb1');
 var row, cell;
 var gameBoard = 8;
-console.log(gameBoard)
 
 for (var i = 1; i < gameBoard; i++) {
     row = $('<tr />');

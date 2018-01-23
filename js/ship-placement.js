@@ -1,14 +1,21 @@
-var destroyer = 0;
-var submarine = 1;
-var cruiser = 2;
-var battleship = 3;
-var carrier = 4;
+// destroyer = 0;
+// submarine = 1;
+// cruiser = 2;              <--- Ship lengths for personal reference.
+// battleship = 3;
+// carrier = 4;
 
+//Init some global variables. 
 var shipLength;
-
 //default direction=horizontal, have to click manually to chage
 //horizontal = true vertical = false
-var dir = true;
+var dir = "true";
+var shipObj = {
+    destroyer: [],
+    submarine: [],
+    cruiser: [],
+    battleship: [],
+    carrier: []
+};
 
 //Highlight selected ship for ship placement.
 $('h6').click(function() {
@@ -16,7 +23,7 @@ $('h6').click(function() {
     $(this).addClass('selected');
 });
 
-//Get info to place ship
+//Get info to place ship when user clicks on ship name. 
 $(".ships").click(function() {
     console.log("ship", $(this).attr("value"));
     var ship = ($(this).attr("value"));
@@ -40,7 +47,7 @@ $(".ships").click(function() {
     $("td").click(function() {
         console.log("location", $(this).attr("id"));
         var location = ($(this).attr("id"));
-        shipPlacement(shipLength, dir, location);
+        shipPlacement(ship, shipLength, dir, location);
     })
     $(".dir-btn").click(function() {
         console.log($(this).attr("value"));
@@ -48,25 +55,22 @@ $(".ships").click(function() {
     })
 })
 
-function shipPlacement(lng, dir, loc) {
+function shipPlacement(ship, lng, dir, loc) {
     console.log("length", lng);
     console.log("dirrection", dir);
     console.log("location", loc);
+    console.log("ship", ship)
     console.log("+++++++");
-    console.log(typeof(loc));
     var xy = loc.split("");
-    console.log(loc.split(""));
     var x = parseInt(xy[0]);
     var y = parseInt(xy[1]);
-    console.log("x", x);
-    console.log("y", y);
+    console.log("x", x, "y", y);
     var placement = [];
     placement.push(loc);
-    console.log(placement);
-    console.log("dir", dir);
-    console.log(typeof(dir));
     if (dir === "true") {
+        console.log("horizontal");
         for (let i = 1; i < lng; i++) {
+            console.log(i);
             var shipPlace = x + i;
             shipPlace = shipPlace.toString() + y;
             console.log("ship places", shipPlace);
@@ -86,5 +90,31 @@ function shipPlacement(lng, dir, loc) {
         var id = "#" + placement[i];
         $(id).addClass('placed');
 
+    }
+    makeShipObj(placement, ship);
+}
+
+function makeShipObj(placement, ship) {
+    switch (ship) {
+        case "0":
+            shipObj.destroyer = { coordinates: placement, hits: [] };
+            console.log(shipObj);
+            break;
+        case "1":
+            shipObj.submarine = { coordinates: placement, hits: [] };
+            console.log(shipObj);
+            break;
+        case "2":
+            shipObj.cruiser = { coordinates: placement, hits: [] };
+            console.log(shipObj);
+            break;
+        case "3":
+            shipObj.battleship = { coordinates: placement, hits: [] };
+            console.log(shipObj);
+            break;
+        case "4":
+            shipObj.carrier = { coordinates: placement, hits: [] };
+            console.log(shipObj);
+            break;
     }
 }
