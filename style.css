@@ -33,9 +33,10 @@ td {
     margin: 20px;
 }
 
-.ships h6 {
-    /* background-color: grey; */
+.ships {
+    background-color: grey;
     padding: 3px;
+    text-align: center
 }
 
 .ships:hover {
@@ -48,4 +49,12 @@ td {
 
 table {
     margin: 10px;
+}
+
+.placed {
+    background-color: blue;
+}
+
+.moves button {
+    margin: 5px 9px;
 }

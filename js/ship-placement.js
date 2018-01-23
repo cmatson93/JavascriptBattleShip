@@ -38,8 +38,8 @@ $(".ships").click(function() {
             break;
     }
     $("td").click(function() {
-        console.log("location", $(this).attr("value"));
-        var location = ($(this).attr("value"));
+        console.log("location", $(this).attr("id"));
+        var location = ($(this).attr("id"));
         shipPlacement(shipLength, dir, location);
     })
     $(".dir-btn").click(function() {
@@ -53,13 +53,38 @@ function shipPlacement(lng, dir, loc) {
     console.log("dirrection", dir);
     console.log("location", loc);
     console.log("+++++++");
-    console.log(loc.split(","));
-    var arr1 = (loc.split(","));
-    var arr2 = (arr1[0].split("("))
-    var arr3 = (arr1[1].split(")"));
-    var x = arr2[1];
-    var y = arr3[0];
-    x = parseInt(x);
-    y = parseInt(y);
-    console.log(typeof(x));
+    console.log(typeof(loc));
+    var xy = loc.split("");
+    console.log(loc.split(""));
+    var x = parseInt(xy[0]);
+    var y = parseInt(xy[1]);
+    console.log("x", x);
+    console.log("y", y);
+    var placement = [];
+    placement.push(loc);
+    console.log(placement);
+    console.log("dir", dir);
+    console.log(typeof(dir));
+    if (dir === "true") {
+        for (let i = 1; i < lng; i++) {
+            var shipPlace = x + i;
+            shipPlace = shipPlace.toString() + y;
+            console.log("ship places", shipPlace);
+            placement.push(shipPlace);
+            console.log("new placement", placement);
+        }
+    } else if (dir === "false") {
+        for (let i = 1; i < lng; i++) {
+            var shipPlace = y + i;
+            shipPlace = x + shipPlace.toString();
+            console.log("ship places", shipPlace);
+            placement.push(shipPlace);
+            console.log("new placement", placement);
+        }
+    }
+    for (let i = 0; i < placement.length; i++) {
+        var id = "#" + placement[i];
+        $(id).addClass('placed');
+
+    }
 }

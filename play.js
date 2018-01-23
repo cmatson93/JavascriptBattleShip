@@ -46,12 +46,12 @@ var row, cell;
 var gameBoard = 8;
 console.log(gameBoard)
 
-for (var i = 0; i < gameBoard; i++) {
+for (var i = 1; i < gameBoard; i++) {
     row = $('<tr />');
     table1.append(row);
-    for (var j = 0; j < gameBoard; j++) {
-        var cordinate = "(" + j + "," + i + ")";
-        cell = $('<td value=' + cordinate + '>' + cordinate + '</td>');
+    for (var j = 1; j < gameBoard; j++) {
+        var cordinate = j.toString() + i.toString();
+        cell = $('<td id=' + cordinate + '>' + cordinate + '</td>');
         row.append(cell);
     }
 }
@@ -59,12 +59,12 @@ for (var i = 0; i < gameBoard; i++) {
 //Make Table 2
 var table2 = $('#tb2');
 
-for (var i = 0; i < gameBoard; i++) {
+for (var i = 1; i < gameBoard; i++) {
     row = $('<tr />');
     table2.append(row);
-    for (var j = 0; j < gameBoard; j++) {
-        var cordinate = "(" + j + "," + i + ")";
-        cell = $('<td value=' + cordinate + '>' + cordinate + '</td>');
+    for (var j = 1; j < gameBoard; j++) {
+        var cordinate = j.toString() + i.toString();
+        cell = $('<td id=' + cordinate + '>' + cordinate + '</td>');
         row.append(cell);
     }
 }
