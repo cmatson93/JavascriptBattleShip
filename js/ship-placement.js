@@ -55,6 +55,11 @@ function shipPlacement(lng, dir, loc) {
     console.log("+++++++");
     console.log(loc.split(","));
     var arr1 = (loc.split(","));
-    console.log(arr1[0].split("("));
-    console.log(arr1[1].split(")"));
+    var arr2 = (arr1[0].split("("))
+    var arr3 = (arr1[1].split(")"));
+    var x = arr2[1];
+    var y = arr3[0];
+    x = parseInt(x);
+    y = parseInt(y);
+    console.log(typeof(x));
 }
