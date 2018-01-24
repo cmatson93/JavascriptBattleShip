@@ -70,8 +70,8 @@ for (var i = 1; i < gameBoard; i++) {
 
 
 $("td").click(function() {
-    console.log("clicked")
-    console.log($(this).attr("value"));
+    // console.log("clicked")
+    // console.log($(this).attr("value"));
     boat = ($(this).attr("value"));
     switch (boat) {
         case "2":
